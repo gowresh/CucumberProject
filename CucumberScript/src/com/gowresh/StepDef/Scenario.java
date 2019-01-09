@@ -30,7 +30,7 @@ public class Scenario {
 	
 	@Given("^Open chrome browser and enter url$")
 	public void open_chrome_browser_and_enter_url() throws Throwable{
-		System.setProperty("webdriver.chrome.driver", "C:\\Users\\gnagesh\\git\\SeleniumConcepts\\Selenium\\EXE\\chromedriver.exe");
+		System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir")+"\\EXE\\chromedriver.exe");
 		 ChromeOptions chromeOptions = new ChromeOptions();
 	      chromeOptions.addArguments("--headless", "--disable-gpu", "--window-size=1920,1080");	    
 	      //driver = new ChromeDriver();
@@ -69,8 +69,8 @@ public class Scenario {
 		tempWindowValue = driver.findElement(By.xpath("//div[@class='highslide-container']/div[3]/div/div/div/div[2]/div/div")).getText();
 		windowSessionValue = Helper.getOnlySessionCount(tempWindowValue);
 		
-		System.out.println(toolTipSessionValue);
-		System.out.println(windowSessionValue);
+		System.out.println("Tool Tip session value = "+toolTipSessionValue);
+		System.out.println("Window session value = "+windowSessionValue);
 		Assert.assertEquals(toolTipSessionValue.trim(), windowSessionValue.trim());
 	
 	    driver.close();
