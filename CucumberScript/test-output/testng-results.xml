@@ -2,16 +2,16 @@
 <testng-results skipped="0" failed="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Suite" duration-ms="30230" started-at="2019-01-09T12:55:06Z" finished-at="2019-01-09T12:55:36Z">
+  <suite name="Suite" duration-ms="25782" started-at="2019-01-09T13:11:15Z" finished-at="2019-01-09T13:11:40Z">
     <groups>
     </groups>
-    <test name="Test" duration-ms="30230" started-at="2019-01-09T12:55:06Z" finished-at="2019-01-09T12:55:36Z">
+    <test name="Test" duration-ms="25782" started-at="2019-01-09T13:11:15Z" finished-at="2019-01-09T13:11:40Z">
       <class name="com.gowresh.TestRunner.TestRunner">
-        <test-method status="PASS" signature="setUpClass()[pri:0, instance:com.gowresh.TestRunner.TestRunner@4dfa3a9d]" name="setUpClass" is-config="true" duration-ms="154" started-at="2019-01-09T18:25:06Z" finished-at="2019-01-09T18:25:06Z">
+        <test-method status="PASS" signature="setUpClass()[pri:0, instance:com.gowresh.TestRunner.TestRunner@4dfa3a9d]" name="setUpClass" is-config="true" duration-ms="163" started-at="2019-01-09T18:41:15Z" finished-at="2019-01-09T18:41:15Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUpClass -->
-        <test-method status="PASS" signature="feature(cucumber.api.testng.CucumberFeatureWrapper)[pri:0, instance:com.gowresh.TestRunner.TestRunner@4dfa3a9d]" name="feature" duration-ms="29993" started-at="2019-01-09T18:25:06Z" data-provider="features" finished-at="2019-01-09T18:25:36Z">
+        <test-method status="PASS" signature="feature(cucumber.api.testng.CucumberFeatureWrapper)[pri:0, instance:com.gowresh.TestRunner.TestRunner@4dfa3a9d]" name="feature" duration-ms="25549" started-at="2019-01-09T18:41:15Z" data-provider="features" finished-at="2019-01-09T18:41:40Z">
           <params>
             <param index="0">
               <value>
@@ -22,7 +22,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- feature -->
-        <test-method status="PASS" signature="tearDownClass()[pri:0, instance:com.gowresh.TestRunner.TestRunner@4dfa3a9d]" name="tearDownClass" is-config="true" duration-ms="0" started-at="2019-01-09T18:25:36Z" finished-at="2019-01-09T18:25:36Z">
+        <test-method status="PASS" signature="tearDownClass()[pri:0, instance:com.gowresh.TestRunner.TestRunner@4dfa3a9d]" name="tearDownClass" is-config="true" duration-ms="6" started-at="2019-01-09T18:41:40Z" finished-at="2019-01-09T18:41:40Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDownClass -->
