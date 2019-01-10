@@ -32,8 +32,8 @@ public class Scenario {
 	public void open_chrome_browser_and_enter_url() throws Throwable{
 		System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir")+"\\EXE\\chromedriver.exe");
 		 ChromeOptions chromeOptions = new ChromeOptions();
-	      chromeOptions.addArguments("--headless", "--disable-gpu", "--window-size=1920,1080");	    
-	     // driver = new ChromeDriver();
+	      chromeOptions.addArguments("--headless", "--disable-gpu", "--window-size=1920,1080","--start-maximized");	    
+	      //driver = new ChromeDriver();
 		driver = new ChromeDriver(chromeOptions);
 		driver.manage().window().maximize();
 		driver.get("https://www.highcharts.com/demo/line-ajax");
@@ -78,7 +78,7 @@ public class Scenario {
 			System.out.println("Window session value = "+windowSessionValue.trim());
 			Assert.assertEquals(windowSessionValue.trim(), toolTipSessionValue.trim(),"The tool tip and highlighted window session count do not match");
 		}finally {
-			   driver.close();
+			   driver.quit();
 				 
 		}
 		
