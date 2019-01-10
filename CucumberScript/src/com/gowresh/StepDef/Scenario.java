@@ -33,7 +33,7 @@ public class Scenario {
 		System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir")+"\\EXE\\chromedriver.exe");
 		 ChromeOptions chromeOptions = new ChromeOptions();
 	      chromeOptions.addArguments("--headless", "--disable-gpu", "--window-size=1920,1080");	    
-	      //driver = new ChromeDriver();
+	     // driver = new ChromeDriver();
 		driver = new ChromeDriver(chromeOptions);
 		driver.manage().window().maximize();
 		driver.get("https://www.highcharts.com/demo/line-ajax");
@@ -44,7 +44,11 @@ public class Scenario {
 	@When("^MouseOver to Jan 5 2018 and note only the session count$")
 	public void mouseOver_to_Jan_5_2018_and_store_only_session_count_to_a_variable() throws Throwable{
 		 Thread.sleep(5000);	
-		    driver.findElement(By.id("CybotCookiebotDialogBodyLevelButtonAccept")).click();
+		 
+		    WebElement cookieLink = driver.findElement(By.id("CybotCookiebotDialogBodyLevelButtonAccept"));
+		    if(cookieLink.isDisplayed()) {
+		    	cookieLink.click();
+		    }
 		    
 		    hoverToElement = new WebDriverWait(driver, 10)
 			        .until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[name()='svg']/*[name()='g'][7]/*[name()='g'][4]/*[name()='path'][19]")));
@@ -61,6 +65,7 @@ public class Scenario {
 	public void Click_on_it_and_that_session_will_be_highlighted() throws Throwable{
 		 Thread.sleep(5000);
 		 hoverToElement.click();
+		 Thread.sleep(5000);
 	}
 	
 	@Then("^Now Compare session count between tool tip and highlighted window$")
@@ -71,7 +76,7 @@ public class Scenario {
 			
 			System.out.println("Tool Tip session value = "+toolTipSessionValue.trim());
 			System.out.println("Window session value = "+windowSessionValue.trim());
-			Assert.assertEquals(toolTipSessionValue.trim(), windowSessionValue.trim());
+			Assert.assertEquals(windowSessionValue.trim(), toolTipSessionValue.trim(),"The tool tip and highlighted window session count do not match");
 		}finally {
 			   driver.close();
 				 
