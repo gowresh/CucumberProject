@@ -65,15 +65,18 @@ public class Scenario {
 	
 	@Then("^Now Compare session count between tool tip and highlighted window$")
 	public void now_Compare_session_count_between_tool_tip_and_highlighted_window() throws Throwable{
+		try {
+			tempWindowValue = driver.findElement(By.xpath("//div[@class='highslide-container']/div[3]/div/div/div/div[2]/div/div")).getText();
+			windowSessionValue = Helper.getOnlySessionCount(tempWindowValue);
+			
+			System.out.println("Tool Tip session value = "+toolTipSessionValue.trim());
+			System.out.println("Window session value = "+windowSessionValue.trim());
+			Assert.assertEquals(toolTipSessionValue.trim(), windowSessionValue.trim());
+		}finally {
+			   driver.close();
+				 
+		}
 		
-		tempWindowValue = driver.findElement(By.xpath("//div[@class='highslide-container']/div[3]/div/div/div/div[2]/div/div")).getText();
-		windowSessionValue = Helper.getOnlySessionCount(tempWindowValue);
-		
-		System.out.println("Tool Tip session value = "+toolTipSessionValue);
-		System.out.println("Window session value = "+windowSessionValue);
-		Assert.assertEquals(toolTipSessionValue.trim(), windowSessionValue.trim());
-	
-	    driver.close();
 			 
 	}
 	
